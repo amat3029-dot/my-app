@@ -16,13 +16,13 @@ export default function Navbar(props) {
           <Link className="nav-link active" aria-current="page" to="/">{props.home}</Link>
         </li>
         <li className="nav-item">
-          <a className="nav-link" href="/">{props.link}</a>
+          <Link className="nav-link" to="/">{props.a}</Link>
         </li>
           <li className="nav-item">
-          <Link className="nav-link" to="/about">About</Link>
+          <Link className="nav-link" aria-current="page" to="/About">About</Link>
          </li>
         {/* <li className="nav-item dropdown">
-          <a className="nav-link dropdown-toggle" href="/" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <a className="nav-a dropdown-toggle" href="/" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Dropdown
           </a>
           <ul className="dropdown-menu">
@@ -33,7 +33,7 @@ export default function Navbar(props) {
           </ul>
         </li>
         <li className="nav-item">
-          <a className="nav-link disabled" aria-disabled="true" >Disabled</a>
+          <a className="nav-a disabled" aria-disabled="true" >Disabled</a>
         </li> */}
       </ul>
       {/* <form className="d-flex" role="search">
@@ -41,10 +41,11 @@ export default function Navbar(props) {
         <button className="btn btn-outline-success" type="submit">Search</button>
       </form> */}
       <div className="form-check form-switch text-light">
-      <input className="form-check-input" onClick={props.toggleMode} type="checkbox" role="switch" id="switchCheckDefault"/>
-      <label className="form-check-label" htmlFor="switchCheckDefault">Mode</label>
+      <input className="form-check-input " onClick={props.toggleMode} type="checkbox" role="switch" id="switchCheckDefault"/>
+      <label className="form-check-label" style={{color:'dark'?'black':'white'}}htmlFor="switchCheckDefault">Mode</label>
     </div>
-    <div className="form-check form-switch">
+
+    {/* <div className="form-check form-switch">
         <input className="form-check-input"  onClick={(e) => props.toggleRed(e.target.checked)} type="checkbox" role="switch" id="switchCheckDefault"/>
         <label className="form-check-label" for="switchCheckDefault">RED</label>
     </div>
@@ -55,7 +56,7 @@ export default function Navbar(props) {
     <div className="form-check form-switch">
       <input className="form-check-input" onClick={(e)=> props.toggleBlue(e.target.checked)}   type="checkbox" role="switch" id="switchCheckDefault"/>
       <label className="form-check-label" for="switchCheckDefault">Blue</label>
-    </div>
+    </div> */}
     </div>
   </div>
 </nav>
@@ -63,9 +64,9 @@ export default function Navbar(props) {
 }
   Navbar.propTypes = {
   home:PropTypes.string,
-  link:PropTypes.string
+  a:PropTypes.string
 };
 // Navbar.defaultProps = {
-//   link: 'Stranger',
+//   a: 'Stranger',
 //   home:'main'
 // };
